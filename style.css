@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box; /* To include padding and border in element's total width and height */
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: gray;
+    padding: 10px;
+    max-width:100%;     /* To ensure the header takes full width */
+}
+
+/* Navigation Bar Styles */
+header nav{
+    display: flex; /* To create a horizontal navigation bar */
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul{
+    display: flex; /* To align list items horizontally */
+    list-style: none;
+    padding: 0;
+}
+header nav ul li{
+    margin-right: 20px;
+    padding: 10px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-weight: 700;
+}
+header nav ul li:hover{
+    background-color: orange;
+    border-radius: 10px;
+}
+header h1{
+    font-size: 2rem;
+    color: white;
+}
+
+/* Main Content and Sidebar Styles */
+main{
+    display: grid; /* To create a grid layout for the main content and sidebar */
+    grid-template-columns: 1fr 300px; /* To define the column structure */
+}
+.container{
+    padding: 20px;
+}
+
+/* Sidebar Styles */
+.sidebar{
+    padding: 20px;
+    background-color: rgb(241, 201, 126);
+}
+.sidebar h4{
+    font-size: 2rem;
+    color: rgb(121, 117, 117);
+    font-weight: 700;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    color: orange;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border-bottom: 5px solid gray;
+    margin-bottom: 0;
+}
+.subtitle{
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 0;
+}
+
+/* Card Styles */
+#card{
+    display: flex;
+}
+.card_child{
+    flex: 1;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+.card_child:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    box-shadow: -5px 5px 10px orange;
+    cursor: pointer;
+}
+.card_child h4{
+    font-size: 1.2rem;
+    color: black;
+}
+
+footer{
+    background-color: gray;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Media Queries for Responsive Design - Mobile */
+@media (max-width:480px) {
+    header{
+        max-width: 100%;
+    }
+    header nav{
+        flex-direction: column;
+    }
+    .title{
+        font-size: 2rem;
+        border-bottom: 3px solid gray;
+    }
+    .subtitle{
+        font-size: 1rem;
+    }
+    main{
+        grid-template-columns: 1fr;
+    }
+    #card{
+        flex-direction: column;
+    }
+}
+
+/* Media Queries for Responsive Design - Tablets */
+@media (min-width:481px) and (max-width: 1024px) {
+    header{
+        max-width: 100%;
+    }
+    header nav ul{
+        flex-direction: column;
+    }
+    header nav ul li{
+        margin-bottom: 10px; 
+        background-color: lightgray;
+        padding: 10px;
+    }
+    main{
+        grid-template-columns: 1fr 150px;
+    }
+    #card{
+        flex-direction: column;
+    }
+    .title{
+        font-size: 2rem;
+        border-bottom: 4px solid gray;
+    }
+}
